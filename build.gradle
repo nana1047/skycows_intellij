@@ -1,0 +1,26 @@
+plugins {
+    //부트로 넘기기 위해? 정의
+    id 'org.springframework.boot' version '2.4.3' //추가
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE' //추가
+    id 'java'
+}
+
+group 'pe.skycows'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '1.8' //자바버전 추가
+
+repositories {
+    mavenCentral()
+    jcenter() //추가
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' //테스트 모듈 추가
+    implementation 'org.springframework.boot:spring-boot-starter-web' //웹 스타터 추가
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
