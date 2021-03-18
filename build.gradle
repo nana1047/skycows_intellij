@@ -15,12 +15,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test' //테스트 모듈 추가
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-web' //웹 스타터 추가
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-}
 
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' //테스트 모듈 추가
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.projectlombok:lombok'
+}
 test {
     useJUnitPlatform()
 }
